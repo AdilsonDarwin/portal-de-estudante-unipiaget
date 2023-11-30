@@ -1,0 +1,325 @@
+﻿
+.pending-ad {
+    background-color: #FED8B8 !important;
+}
+
+.sucess-ad {
+    background-color: #BADBCC !important;
+}
+
+.denied-ad {
+    background-color: #F5C2C7 !important;
+}
+/* //////////////////////////*/
+.my-gap-4 {
+    gap: 4px;
+}
+
+.my-gap-8 {
+    gap: 8px;
+}
+
+.my-gap-12 {
+    gap: 12px;
+}
+
+.my-gap-16 {
+    gap: 16px;
+}
+
+.my-gap-24 {
+    gap: 24px;
+}
+
+.my-gap-32 {
+    gap: 32px;
+}
+
+.my-radius-8 {
+    border-radius: 8px;
+}
+
+.hero-profile-picture::after {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    content: '';
+    width: 16px;
+    height: 16px;
+    background-color: rgb(0, 195, 0);
+    border: 3px solid #f4f2ee;
+    border-radius: 100%;
+}
+/* //////////////////////////*/
+
+#portal-container {
+    background-color: #f4f2ee;
+    transition: .3s;
+    border-top: none !important;
+    text-decoration: none !important;
+}
+
+#portal-container a {
+    border-top: none !important;
+    text-decoration: none !important;
+}
+
+
+.center-1440 {
+    max-width: 1240px;
+}
+
+.fit-screen-100 {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.hero-content {
+    height: 220px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://rna.ao/rna.ao/wp-content/uploads/2020/10/Unipiaget.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+}
+
+
+.top-description-container {
+    bottom: 16px;
+    color: #fff;
+}
+
+.top-description-container h3 {
+    font-size: 20px;
+    color: inherit;
+}
+
+.top-description-container li .fa-clock {
+    color: #fff;
+    padding: 4px;
+    background-color: rgb(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.top-description-container li .fa-calendar-days {
+    color: #fff;
+    padding: 4px;
+    background-color: rgb(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+
+.bottom-description-container {
+    bottom: -108px;
+    color: #1E2124;
+}
+
+.bottom-description-container h1 {
+    font-size: 24px;
+}
+
+.top-description-container,
+.bottom-description-container {
+    left: 168px;
+    height: 92px;
+}
+
+    .top-description-container span,
+    .bottom-description-container span {
+        font-size: 16px;
+    }
+
+    .bottom-description-container .fa-graduation-cap {
+        color: #fe6347;
+        padding: 4px;
+        background-color: rgb(254,99,71, 0.2);
+        border-radius: 4px;
+    }
+
+    .bottom-description-container .fa-address-card {
+        color: #663399;
+        padding: 4px;
+        background-color: rgb(102, 51, 153, 0.2);
+        border-radius: 4px;
+    }
+
+
+.social-media-ul {
+    border-top: 1px solid #e1e1e1;
+    padding-top: 8px;
+}
+
+.social-media-ul i {
+    font-size: 20px;
+    transition: .3s;
+}
+
+.social-media-ul li:nth-child(1) a i {
+    color: #1877F2;
+}
+
+.social-media-ul li:nth-child(2) a i {
+    color: #0A66C2;
+}
+
+.social-media-ul li:nth-child(3) a i {
+    color: #833AB4;
+}
+
+.social-media-ul li:nth-child(4) a i {
+    color: #CD201F;
+}
+
+
+.hero-profile-picture {
+    width: 144px;
+    height: 144px;
+    background-color: gray;
+    border-radius: 100%;
+    border: 4px solid #f4f2ee;
+    position: absolute;
+    left: 0;
+    bottom: -72px;
+    transition: .3s;
+}
+
+.main-center {
+    padding: 140px 0 80px 0;
+}
+
+
+.filter-main-nav {
+    width: 380px;
+    height: fit-content;
+    background-color: #1E2124;
+    padding: 24px;
+}
+
+.filter-main-nav ul li {
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: .3s;
+}
+
+    .filter-main-nav ul li a {
+        width: 100%;
+    }
+
+    .filter-main-nav ul li,
+    .filter-main-nav ul li a {
+        color: #808080;
+    }
+
+.list-active {
+    background-color: #fff;
+    color: #000 !important;
+}
+
+.filter-main-nav ul li:hover {
+    background-color: #fff;
+    color: #000 !important;
+    transform: scale(1.1);
+}
+
+
+.main {
+    height: fit-content;
+   
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .hero-profile-picture::after
+
+{
+    right: 8px;
+    bottom: 8px;
+}
+
+
+.top-description-container {
+    left: 0;
+    top: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-description-container h3 {
+    display: none;
+}
+
+.top-description-container ul {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.top-description-container li {
+    align-self: flex-start;
+}
+
+
+.bottom-description-container {
+    width: calc(100% - 16px);
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -208px;
+}
+
+.bottom-description-container ul {
+    flex-direction: column;
+    gap: 4px;
+}
+
+.bottom-description-container ul,
+.bottom-description-container h1 {
+    align-self: center;
+}
+
+.bottom-description-container span {
+    text-align: center;
+}
+
+.top-description-container,
+.bottom-description-container {
+    height: fit-content;
+}
+
+.social-media-ul {
+    width: 100%;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center;
+    gap: 16px !important;
+}
+
+
+.hero-profile-picture {
+    width: 124px;
+    height: 124px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -62px;
+}
+
+
+.content-container {
+    gap: 0;
+    justify-content: center;
+}
+
+.content-container nav {
+    display: none !important;
+}
+
+.main-center {
+    padding: 240px 0 80px 0;
+}
+
+    .main-center h2 {
+        display: block !important;
+    }
+
+
