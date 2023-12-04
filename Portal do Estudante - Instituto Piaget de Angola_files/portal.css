@@ -502,17 +502,17 @@
 /* ================================= 1 - PAINEL ================================= */
 .painel-container{
     display: flex;
-    flex-direction: column;
+    gap: 24px;
 }
 /* ********** blog-container ********** */
 .blog-container{
-    max-width: 900px;
+    max-width: 632px;
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
 }
 .blog-post{
-    width: 268px;
+    width: 200px;
     padding: 8px;
     background-color: #fff;
     box-shadow:  0 .125rem .25rem rgba(0,0,0,.075)!important;
@@ -525,7 +525,7 @@
 }
 .blog-img-container img{
     border-radius: 8px 8px 0 0;
-    border: 1px solid rgba(0,0,0,.1);
+    border: 1px solid rgba(0,0,0,.065);
     width: 100%;
     height: 100%;
 }
@@ -551,7 +551,7 @@
     margin-bottom: 0 !important;
 }
 .blog-title{
-    font-size: 20px;
+    font-size: 18px;
 }
 .blog-paragraph{
     color: #777777;
@@ -563,18 +563,19 @@
 
 /* ********** aside-painel ********** */
 .aside-painel{
-    max-width: 836px;
-    max-height: 280px;
-    overflow-y: auto;
-    background-color: #dedede;
+    max-width: 280px;
+    height: fit-content;
+    background-color: #fff;
+    box-shadow:  0 .125rem .25rem rgba(0,0,0,.075)!important;
     border-radius: 8px;
 }
 .aside-title,
 .pdf-list{
-    padding: 8px;
+    padding: 16px;
 }
 .aside-title{
-    background-color: #1E2124;
+    border-radius: 8px 8px 0 0;
+    background-color: #444;
 }
 .aside-title h5{ 
     color: #fff;
@@ -582,7 +583,8 @@
 }
 .pdf-list{
     margin-bottom: 0 !important;
-    padding-left: 8px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -602,19 +604,28 @@
     color: #cea44b;
 }
 
+
 @media only screen and (max-width: 1024px){
+    .painel-container{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
     .blog-container{
-        justify-content: center;
+        padding-left: initial;
+    }
+    .blog-post{
+        width: 100%;
     }
     .aside-painel{
-        width: calc(100% - 1.5rem);
-        margin: 0 auto;
+        max-width: 100%;
+        margin: 0 1.5rem;
     }
 }
 
 @media only screen and (max-width: 768px){
-    .blog-post{
-        width: calc(100% - 1.5rem);
+    .blog-container{
+        padding: 0 1.5rem !important;
     }
 }
 /* ================================= 2 - CANDIDATURAS ================================= */
