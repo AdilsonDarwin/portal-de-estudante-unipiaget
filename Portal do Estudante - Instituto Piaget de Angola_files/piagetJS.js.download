@@ -43,6 +43,15 @@ $(document).ready(function () {
         });
         if (li == 0) { $(this).hide(); $(this).next('ul').hide()}
     });
+    $(".sidebar-menu-portal a").each(function () {
+        if (this.href == window.location.href) {
+            $(this).parent().addClass("list-active"); // add active to li of the current link
+            //$(this).parent().parent().parent().addClass("open");
+            //alert($(this).parent().parent().parent().parent().parent().attr('id'));
+            // -- problem here with sidebar-- $(this).parent().parent().parent().addClass("active"); // add active class to an anchor
+            //$(this).parent().parent().parent().parent().parent().addClass("list-active"); // add active class to an anchor
+        }
+    });
 });
 $(function () {
     var iconDown = true
@@ -7966,6 +7975,7 @@ function handleDataAcademicCalendar() {
             },
             //Cada dado representa uma coluna da tabela
             { "data": "ANOLECTIVO", "name": "ANOLECTIVO", "autoWidth": true },
+            { "data": "SEMESTRE", "name": "SEMESTRE", "autoWidth": true },
             { "data": "DATAINICIO", "name": "DATAINICIO", "autoWidth": true },
             { "data": "DATAFIM", "name": "DATAFIM", "autoWidth": true },
             { "data": "ACTIVIDADE", "name": "ACTIVIDADE", "autoWidth": true },
@@ -10003,7 +10013,7 @@ function handleDataScheduleModules() {
         },
     });
 };
-function handleDataFacultyServices(Id, AnoLectivo) {
+function handleDataFacultyServices() {
 
     var table = $("#DistribuicaoServicoDocenteTable").DataTable({
         "processing": true, // Para exibir mensagem de processamento a cada requisição
@@ -10023,7 +10033,7 @@ function handleDataFacultyServices(Id, AnoLectivo) {
             "url": "../../gamanagement/GetFacultyServices", // POST TO CONTROLLER
             "type": "POST",
             "datatype": "json",
-            data: { "Id": Id, "AnoLectivo": AnoLectivo }
+            data: { "Id": $('#SubjectId').val(), "AnoLectivo": $('#AnoLectivoId').val() }
         },
         "columns": [
             { "data": "Id", "name": null, "autoWidth": true },
@@ -10035,6 +10045,8 @@ function handleDataFacultyServices(Id, AnoLectivo) {
                 }
             },
             //Cada dado representa uma coluna da tabela
+            { "data": "UNIDADE", "name": "UNIDADE", "autoWidth": true },
+            { "data": "CODIGO", "name": "CODIGO", "autoWidth": true },
             { "data": "TIPOAULA", "name": "TIPOAULA", "autoWidth": true },
             { "data": "DOCENTE", "name": "DOCENTE", "autoWidth": true },
             { "data": "TURMA", "name": "TURMA", "autoWidth": true },
