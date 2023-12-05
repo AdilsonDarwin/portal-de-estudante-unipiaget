@@ -231,27 +231,214 @@
                      <!-- ******************* main ******************* -->
                      <!-- Page Content -->
                      <main class="main main-percurso my-radius-8 w-100">
-                        <div class="d-flex flex-column my-gap-12">
-                            <h2 class="fw-bold opacity-25 d-none ">Percuso Académico</h2>
+                        <div class="d-flex flex-column">
+                            <h2 class="percurso-h2 fw-bold opacity-25 d-none m-0">Percuso Académico</h2>
+
                             <!--nav-tabs-->
                             <ul class="nav nav-tabs d-flex my-gap-12 mb-0 border-0">
-                                <li class="nav-item "><a class="nav-link active" href="#id1" data-toggle="tab"><strong class="">E MEC</strong></a></li>
-                                <li class="nav-item"><a class="nav-link " href="#id2" data-toggle="tab"><strong class="">E INFO</strong></a></li>
-                                <li class="nav-item"><a class="nav-link " href="#id3" data-toggle="tab"><strong class="">NUTR</strong></a></li>
-                            </ul>
+                              <li class="nav-item "><a class="nav-link active" href="#id1" data-toggle="tab"><strong>CURSO 1</strong></a></li>
+                              <li class="nav-item"><a class="nav-link" href="#id2" data-toggle="tab"><strong>CURSO 2</strong></a></li>
+                              <li class="nav-item"><a class="nav-link" href="#id3" data-toggle="tab"><strong>CURSO 3</strong></a></li>
+                           </ul>
+
                             <!--tab-content-->
                             <div class="tab-content">
-                                <!-- TAB INFO -->
-                                <div class="my-radius-8 tab-pane active" id="id1">
-                                    tab-1
-                                </div>
-                                <div class="p-4 my-radius-8 tab-pane" id="id2">
-                                    tab-2
-                                </div>
-                                <div class="p-4 my-radius-8 tab-pane" id="id3">
-                                    tab-3
-                                </div>
-                            </div>
+                              <!-- TAB INFO -->
+                              <div class="my-radius-8 tab-pane active" id="id1">
+                                  <div class="d-flex flex-column my-gap-16">
+                                    <!--tab-header-->
+                                    <header class="tab-header d-flex flex-column my-gap-8">
+                                       <div><i></i><h2 class="text-uppercase m-0 p-0">Engenharia Mecânica</h2></div>
+                                       <h3 class="m-0">Faculdade de Ciências e Tecnologias</h3>
+                                       <p><strong>Ano Lectivo: </strong><span>2022/2024</span> | <strong>Turno: </strong><span>Diúrno</span> | <strong>Turma: </strong><span>InfoGes_1D</span></p>
+                                    </header>
+                                    <!--tab-main-->
+                                    <section class="tab-main">
+                                       <div id="accordion" class="percurso-accordion d-flex flex-column  my-gap-16">
+                                        <!--CARD--1-->
+                                        <div class="card border-0 ">
+                                            <div class="card-header card my-radius-4" id="headingOne">
+                                                <h5 class="mb-0 text-center">
+                                                    <button class="text-light btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                                        <div class="d-flex my-gap-8 align-items-center text-center"><i class="fa-regular fa-calendar"></i><span>1º Semestre</span></div>
+                                                    </button>
+                                                </h5>
+                                            </div>
+                
+                                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion" style="">
+                                                <div class="card-body">
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">Disciplina</th>
+                                                                <th scope="col">Nota Final</th>
+                                                                <th scope="col">Ano-Semestre</th>
+                                                                <th scope="col">Frequência</th>
+                                                                <th scope="col">CH</th>
+                                                                <th scope="col">Situação</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope="row">Tecnologia Mecânica</th>
+                                                                <td>18.7</td>
+                                                                <td>2017-1</td>
+                                                                <td>91.3%</td>
+                                                                <td>32</td>
+                                                                <td class="sucess-ad">APROVADO</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">Mecânica dos Materiais</th>
+                                                                <td>---</td>
+                                                                <td>2017-1</td>
+                                                                <td>91.3%</td>
+                                                                <td>32</td>
+                                                                <td class="pending-ad">SEM NOTA</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">Termodinâmica II</th>
+                                                                <td>6.8</td>
+                                                                <td>2017-1</td>
+                                                                <td>91.3%</td>
+                                                                <td>32</td>
+                                                                <td class="denied-ad">REPROVADO</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--//(END)CARD--1-->
+
+                                        <!--CARD--2-->
+                                        <div class="card border-0 ">
+                                            <div class="card-header my-radius-4 " id="headingTwo">
+                                                <h5 class="mb-0 text-center">
+                                                    <button class="text-light btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                        <div class="d-flex my-gap-8 align-items-center text-center"><i class="fa-regular fa-calendar"></i><span>2º Semestre</span></div>
+                                                    </button>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                                <div class="card-body">
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">Disciplina</th>
+                                                                <th scope="col">Nota Final</th>
+                                                                <th scope="col">Ano-Semestre</th>
+                                                                <th scope="col">Frequência</th>
+                                                                <th scope="col">CH</th>
+                                                                <th scope="col">Situação</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope="row">Tecnologia Mecânica</th>
+                                                                <td>18.7</td>
+                                                                <td>2017-1</td>
+                                                                <td>91.3%</td>
+                                                                <td>32</td>
+                                                                <td class="sucess-ad">APROVADO</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">Mecânica dos Materiais</th>
+                                                                <td>---</td>
+                                                                <td>2017-1</td>
+                                                                <td>91.3%</td>
+                                                                <td>32</td>
+                                                                <td class="pending-ad">SEM NOTA</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">Termodinâmica II</th>
+                                                                <td>6.8</td>
+                                                                <td>2017-1</td>
+                                                                <td>91.3%</td>
+                                                                <td>32</td>
+                                                                <td class="denied-ad">REPROVADO</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--//(END)CARD--2-->
+
+                                        <!--CARD--3-->
+                                        <div class="card border-0 ">
+                                            <div class="card-header my-radius-4 " id="headingThree">
+                                                <h5 class="mb-0 text-center">
+                                                    <button class="text-light btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                        <div class="d-flex my-gap-8 align-items-center text-center"><i class="fa-regular fa-calendar"></i><span>3º Semestre</span></div>
+                                                    </button>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                                <div class="card-body">
+                                                    <table class="table table-striped">
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">Disciplina</th>
+                                                                <th scope="col">Nota Final</th>
+                                                                <th scope="col">Ano-Semestre</th>
+                                                                <th scope="col">Frequência</th>
+                                                                <th scope="col">CH</th>
+                                                                <th scope="col">Situação</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope="row">Tecnologia Mecânica</th>
+                                                                <td>18.7</td>
+                                                                <td>2017-1</td>
+                                                                <td>91.3%</td>
+                                                                <td>32</td>
+                                                                <td class="sucess-ad">APROVADO</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">Mecânica dos Materiais</th>
+                                                                <td>---</td>
+                                                                <td>2017-1</td>
+                                                                <td>91.3%</td>
+                                                                <td>32</td>
+                                                                <td class="pending-ad">SEM NOTA</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">Termodinâmica II</th>
+                                                                <td>6.8</td>
+                                                                <td>2017-1</td>
+                                                                <td>91.3%</td>
+                                                                <td>32</td>
+                                                                <td class="denied-ad">REPROVADO</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--// (END)CARD--1-->
+
+                                       </div>
+                                    </section>
+                                    <!--tab-footer-->
+                                    <footer class="tab-footer list-unstyled ">
+                                       <h4 class="fw-bolder ">Legendas</h4>
+                                       <ul class="list-unstyled d-flex my-gap-12 flex-wrap">
+                                        <li class="d-flex my-gap-8"><strong>CH</strong><span>Carga Horária;</span></li>
+                                        <li class="d-flex my-gap-8"><strong>CH</strong><span>Carga Horária;</span></li>
+                                        <li class="d-flex my-gap-8"><strong>CH</strong><span>Carga Horária;</span></li>
+                                       </ul>
+                                    </footer>
+                                  </div>
+                              </div>
+
+                              <div class="my-radius-8 tab-pane" id="id2">
+                                  tab-2
+                              </div>
+                              <div class="my-radius-8 tab-pane" id="id3">
+                                  tab-3
+                              </div>
+                          </div>
                         </div>
                      </main>
                   </div>

@@ -498,11 +498,13 @@
             display: block !important;
         }
 }
-
 /* ================================= 1 - PAINEL ================================= */
 .painel-container{
     display: flex;
     gap: 24px;
+}
+.painel-h2{
+    text-align: center;
 }
 /* ********** blog-container ********** */
 .blog-container{
@@ -512,7 +514,7 @@
     gap: 16px;
 }
 .blog-post{
-    width: 200px;
+    width: 300px;
     padding: 8px;
     background-color: #fff;
     box-shadow:  0 .125rem .25rem rgba(0,0,0,.075)!important;
@@ -560,7 +562,6 @@
 .blog-date{
     color: rgb(100, 100, 100) !important;
 }
-
 /* ********** aside-painel ********** */
 .aside-painel{
     max-width: 280px;
@@ -603,8 +604,6 @@
 .pdf-list span:active{
     color: #cea44b;
 }
-
-
 @media only screen and (max-width: 1024px){
     .painel-container{
         display: flex;
@@ -622,7 +621,6 @@
         margin: 0 1.5rem;
     }
 }
-
 @media only screen and (max-width: 768px){
     .blog-container{
         padding: 0 1.5rem !important;
@@ -630,9 +628,108 @@
 }
 /* ================================= 2 - CANDIDATURAS ================================= */
 
-
-/* ================================= 3 - PERCURSO ================================= */
-
-.main-percurso{
+.main-apply{
+    padding: 1rem !important;
+    border: 1px solid #dedede;
     background-color: #fff;
+}
+.percurso-h2{
+    padding: 1rem 0 !important;
+}
+.apply-body{
+    margin: 1rem 0;
+}
+.apply-btn{
+    color: #fff;
+}
+.main-apply .card-header{
+    background-color: #444 !important;
+}
+.main-apply .card-header h2{
+    text-align: center;
+}
+.main-apply .card-header button{
+    margin: 0 auto;
+    color: #fff;
+}
+/* ================================= 3 - PERCURSO ================================= */
+.main-percurso{
+    padding: 1rem !important;
+    border: 1px solid #dedede;
+    background-color: #fff;
+}
+.percurso-h2{
+    padding: 1rem 0 !important;
+}
+.main-percurso ul,
+.main-percurso h4,
+.main-percurso p{
+    margin-bottom: 0 !important;
+}
+.nav-tabs{
+    border-bottom: 1px solid rgba(0,0,0,.075) !important;
+}
+.main-percurso .nav-tabs .nav-link {
+    border: 0 !important;
+    padding: 0.5rem 1rem !important;
+}
+.main-percurso .nav-link {
+    padding: 0.5rem 1rem;
+    padding: 0 !important;
+}
+.main-percurso .nav-link.active{
+    background-color: #cea44b !important;
+    border-top-left-radius: 4px !important;
+    border-top-right-radius: 4px !important;
+    padding: 0.5rem 1rem !important;
+    border: 0 !important;
+}
+.tab-pane{
+    padding-top: 1rem;
+}
+.tab-pane h2{
+    font-size: 24px !important;
+}
+.tab-pane h3{
+    font-size: 18px !important;
+}
+.tab-pane h4{
+    font-size: 16px !important;
+}
+.main-percurso .card{
+    margin-bottom: 0 !important;
+}
+.main-percurso .card-header{
+    background-color: #444 !important;
+}
+.main-percurso .card-header span,
+.main-percurso .card-header i{
+    color: #fff !important;
+}
+.main-percurso .card-body{
+    padding-bottom: 0 !important;
+    padding: 0rem;
+}
+.main-percurso thead{
+    border-left: 1px solid rgba(0,0,0,.075);
+    border-bottom: 1px solid rgba(0,0,0,.075);
+    border-right: 1px solid rgba(0,0,0,.075);
+}
+.main-percurso tbody{
+    border-left: 1px solid rgba(0,0,0,.075);
+    border-right: 1px solid rgba(0,0,0,.075);
+}
+.main-percurso tbody tr:nth-child(odd){
+    border-top: 1px solid #dee2e6;
+    background-color: rgba(0,0,0,.05);
+}
+.card-body .table {
+    margin-bottom: 0rem;
+}
+.tab-footer{
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0,0,0,.075);
+}
+.tab-footer strong{
+    color: #CD201F;
 }
