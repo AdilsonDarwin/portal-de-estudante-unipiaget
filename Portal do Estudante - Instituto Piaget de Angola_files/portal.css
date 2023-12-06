@@ -322,8 +322,17 @@
     padding-top: 8px;
 }
 
+    .social-media-ul .btn-primary{
+        background-color: #dedede !important;
+        border: none;
+    }
+
+    .social-media-ul .btn-primary:hover{
+        background-color: #c9c9c9 !important;
+    }
+
     .social-media-ul i {
-        font-size: 20px;
+        font-size: 16px;
         transition: .3s;
     }
 
@@ -468,7 +477,7 @@
         display: flex !important;
         flex-direction: row !important;
         justify-content: center;
-        gap: 16px !important;
+        gap: 8px !important;
     }
 
 
@@ -652,6 +661,28 @@
     margin: 0 auto;
     color: #fff;
 }
+.main-apply .card-body{
+    border: 1px solid #dedede;
+}
+
+
+.apply-section h4{
+    background-color: #444 !important;
+    color: #fff !important;
+    padding: .5rem !important;
+}
+.apply-ul-container{
+    display: flex;
+}
+.apply-ul-container ul{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+.apply-ul-container li{
+    list-style: none;
+}
+
 /* ================================= 3 - PERCURSO ================================= */
 .main-percurso{
     padding: 1rem !important;
@@ -732,4 +763,28 @@
 }
 .tab-footer strong{
     color: #CD201F;
+}
+
+
+/* ================================= 4 - EMOLUMENTOS ================================= */
+.main-emolumentos thead{
+    border-left: 1px solid rgba(0,0,0,.075);
+    border-bottom: 1px solid rgba(0,0,0,.075);
+    border-right: 1px solid rgba(0,0,0,.075);
+}
+.main-emolumentos tbody{
+    border-left: 1px solid rgba(0,0,0,.075);
+    border-right: 1px solid rgba(0,0,0,.075);
+}
+.main-emolumentos tbody tr:nth-child(odd){
+    border-top: 1px solid #dee2e6;
+    background-color: rgba(0,0,0,.05);
+}
+.main-emolumentos .table thead th{
+    padding: 0 .5rem !important;
+    font-size: 11px !important;
+}
+.main-emolumentos .card-body{
+    padding-bottom: 0 !important;
+    padding: 0rem;
 }
