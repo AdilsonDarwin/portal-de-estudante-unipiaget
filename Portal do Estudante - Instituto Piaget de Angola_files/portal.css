@@ -558,7 +558,7 @@
     padding: .5rem .5rem;
     border-radius: 4px;
     color: #353535;
-    background-color: rgb(72, 74, 76, 0.1);
+    background-color: #f1f1f1;
 }
 .pdf-list a{
     padding-left: 24px;
@@ -724,3 +724,13 @@
     }
 }
 /* ================================= 5 - HORÁRIOS ================================= */
+.main-horarios td{
+    border: 1px solid rgba(0,0,0, .085) !important;
+}
+.main-horarios table thead th[scope=col]{
+    border-bottom: 1px solid rgba(0,0,0, .085) !important;
+}
+.main-horarios table th[scope=row]{
+    border-bottom: 1px solid rgba(0,0,0, .085) !important;
+    border-top: 1px solid rgba(0,0,0, .085) !important;
+}
