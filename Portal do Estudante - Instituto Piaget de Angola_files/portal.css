@@ -537,15 +537,17 @@
     background-color: #fff;
     box-shadow:  0 .125rem .25rem rgba(0,0,0,.075)!important;
     border-radius: 8px;
-    padding: .5rem 0;
+    padding-bottom: .5rem;
 }
 .aside-title{ 
-    border-bottom: 2px solid #f0bf5f;
+    border-bottom: 4px solid #f0bf5f;
+    background-color: #353535;
+    border-radius: 8px 8px 0 0;
 }
 .aside-title h5{ 
-    color: #353535;
+    color: #f1f1f2;
     margin-bottom: 0 !important;
-    padding: 0 1rem .5rem 1rem;
+    padding: .5rem 1rem ;
 }
 .pdf-list{
     margin-bottom: 0 !important;
@@ -555,8 +557,8 @@
     margin: .5rem !important;
     padding: .5rem .5rem;
     border-radius: 4px;
-    color: #f1f1f2;
-    background-color: #484a4d;
+    color: #353535;
+    background-color: rgb(72, 74, 76, 0.1);
 }
 .pdf-list a{
     padding-left: 24px;
@@ -592,10 +594,15 @@
     margin: 1rem 0;
 }
 .apply-btn{
-    color: #fff;
+    color: #fff !important;
+    background-color: #e9a319 !important;
+}
+.apply-btn:hover{
+    background-color: #dd9b18 !important;
 }
 .main-apply .card-header{
     background-color: #444 !important;
+    border-radius: 8px 8px 0 0;
 }
 .main-apply .card-header h2{
     text-align: center;
@@ -622,6 +629,13 @@
 }
 .apply-ul-container li{
     list-style: none;
+}
+.main-apply table i{
+    color: #e9a319;
+    visibility: visible !important;
+}
+.main-apply table i:hover{
+    color: #353535;
 }
 
 /* ================================= 3 - PERCURSO ================================= */
