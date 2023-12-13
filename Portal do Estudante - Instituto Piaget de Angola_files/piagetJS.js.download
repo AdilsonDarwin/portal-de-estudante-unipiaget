@@ -872,6 +872,7 @@ $(document).on('click', '.open-modal-crud', function (e) {
             break;
         case 'hrtimetrack': url = '../../Ajax/HRTimetrackAbsences';
             break;
+            break;
         case 'gascheduledaysweek': url = '../../Ajax/GAScheduleDaysWeek';
             break;
         case 'gascheduleweeks': url = '../../Ajax/GAScheduleWeeks';
@@ -879,6 +880,8 @@ $(document).on('click', '.open-modal-crud', function (e) {
         case 'gaschedulemodules': url = '../../Ajax/GAScheduleModules';
             break;
         case 'gamanagementfacultyservices': url = '../../Ajax/GAManagementFacultyServices';
+            break;
+        case 'gafacultyservices': url = '../../Ajax/GAFacultyServices';
             break;
           default: null
     }
@@ -3232,7 +3235,8 @@ function handleDataCurso() {
         "ajax": {
             "url": "/gamanagement/GetCourses", // POST TO CONTROLLER
             "type": "POST",
-            "datatype": "json"
+            "datatype": "json",
+            data: { "UnidadeId": $('#UnidadeId').val()}
         },
         "columns": [
             { "data": "Id", "name": null, "autoWidth": true },
@@ -6546,6 +6550,7 @@ function handleDataGPUserAcademicData() {
             //Cada dado representa uma coluna da tabela
             { "data": "PROCEDENCIA", "name": "PROCEDENCIA", "autoWidth": true },
             { "data": "TIPO_EDUCACAO", "name": "TIPO_EDUCACAO", "autoWidth": true },
+            { "data": "GRAU", "name": "GRAU", "autoWidth": true },
             { "data": "ESCOLA", "name": "ESCOLA", "autoWidth": true },
             { "data": "CURSO", "name": "CURSO", "autoWidth": true },
             { "data": "ANO_CONCLUSAO", "name": "ANO_CONCLUSAO", "autoWidth": true },
@@ -9550,12 +9555,10 @@ function handleDataRHTimeTrack() {
                         $(row).closest("tr").addClass("piaget-danger");
                 }
                 else {
-                    if (data.ABSENCES == "1") $(row).closest("tr").find("td:eq(2)").addClass("bg-warning");
-                    if (data.ABSENCES == "2") $(row).closest("tr").find("td:eq(2)").addClass("bg-danger");
+                    //if (data.ABSENCES == "1") $(row).closest("tr").find("td:eq(2)").addClass("bg-warning");
+                    //if (data.ABSENCES == "2") $(row).closest("tr").find("td:eq(2)").addClass("bg-danger");
                 }
-        }
-            
-            //console.log(rowId)
+            }
             //Draw table and add selected option to previously selected checkboxes
             $.each(values, function (i, r) {
                 if (rowId == r) {
@@ -10013,8 +10016,7 @@ function handleDataScheduleModules() {
         },
     });
 };
-function handleDataFacultyServices() {
-
+function handleDataSubjectFacultyServices() {
     var table = $("#DistribuicaoServicoDocenteTable").DataTable({
         "processing": true, // Para exibir mensagem de processamento a cada requisição
         "serverSide": true, // Para processar as requisições no back-end
@@ -10030,10 +10032,10 @@ function handleDataFacultyServices() {
         },
         "dom": '<"toolbox">rtp',//remove componentes i - for pagination information, l -length, p -pagination
         "ajax": {
-            "url": "../../gamanagement/GetFacultyServices", // POST TO CONTROLLER
+            "url": "../../gamanagement/GetSubjectFacultyServices", // POST TO CONTROLLER
             "type": "POST",
             "datatype": "json",
-            data: { "Id": $('#SubjectId').val(), "AnoLectivo": $('#AnoLectivoId').val() }
+            data: { "Id": $('#SubjectId').val(), "AnoLectivo": $('#AnoLectivoId').val(), "ClassId": $('#ClassId').val() }
         },
         "columns": [
             { "data": "Id", "name": null, "autoWidth": true },
@@ -10041,7 +10043,7 @@ function handleDataFacultyServices() {
             {
                 sortable: false,
                 "render": function (data, type, full, meta) {
-                    return '<a style="display:' + full.AccessControlEdit + '" title="Editar" href="javascript:void(0)" class="open-modal-crud" data-id="' + full.Id + '" data-action="EditarDisc" data-entity="gamanagementfacultyservices" data-toggle="modal" data-target="#crudControlModal"><i class="fa fa-pencil"/></i></a> <a style="display:' + full.AccessControlDelete + '"title="Remover" href="javascript:void(0)" class="open-modal-crud" data-id="' + full.Id + '-0" data-action="Remover" data-entity="gamanagementfacultyservices" data-toggle="modal" data-target="#crudControlModal"><i class="fa fa-trash"/></i></a>';
+                    return '<a style="display:' + full.AccessControlEdit + '" title="Editar" href="javascript:void(0)" class="open-modal-crud" data-id="' + full.Id + '" data-action="Editar" data-entity="gamanagementfacultyservices" data-toggle="modal" data-target="#crudControlModal"><i class="fa fa-pencil"/></i></a> <a style="display:' + full.AccessControlDelete + '"title="Remover" href="javascript:void(0)" class="open-modal-crud" data-id="' + full.Id + '" data-action="Remover" data-entity="gamanagementfacultyservices" data-toggle="modal" data-target="#crudControlModal"><i class="fa fa-trash"/></i></a>';
                 }
             },
             //Cada dado representa uma coluna da tabela
@@ -10089,6 +10091,226 @@ function handleDataFacultyServices() {
         //Remove pagination from table and add to custom Div
         initComplete: (settings, json) => {
             $('#DistribuicaoServicoDocenteTable_paginate').appendTo('#paginateDistribuicaoServicoDocenteTable');
+        },
+    });
+};
+function handleDataFacultyServices() {
+    var table = $("#DistribuicaoFaculdadeTable").DataTable({
+        "processing": true, // Para exibir mensagem de processamento a cada requisição
+        "serverSide": true, // Para processar as requisições no back-end
+        //"filter": false, // : está comentado porque estamos a usar filtros que enviamos no back-end
+        "orderMulti": false, // Opção de ordenação para uma coluna de cada vez.
+        //Linguagem PT
+        "language": {
+            "url": "/Assets/lib/datatable/pt-PT.json"
+        },
+        fixedHeader: {
+            header: true,
+            footer: true
+        },
+        "dom": '<"toolbox">rtp',//remove componentes i - for pagination information, l -length, p -pagination
+        "ajax": {
+            "url": "../../gamanagement/GetFacultyServices", // POST TO CONTROLLER
+            "type": "POST",
+            "datatype": "json",
+            data: { "UnidadeId": $('#UnidadeId').val(), "CursoId": $('#CursoId').val() }
+        },
+        "columns": [
+            { "data": "Id", "name": null, "autoWidth": true },
+            //Column customizada
+            {
+                sortable: false,
+                "render": function (data, type, full, meta) {
+                    return '<a style="display:' + full.AccessControlDocente +'"  title="' + full.NOME + '" href="/gamanagement/facultyprofile/' + full.UTILIZADOR + '"><i class="fa fa-search"></i></a>  <a target="_blank" style="display:' + full.AccessControlPessoa+'" title="Dados pessoais" href="/gpmanagement/viewusers/' + full.PESSOA +'"><i class="fa fa-user-edit"></i></a>    <a style="display:' + full.AccessControlEdit + '" title="Editar" href="javascript:void(0)" class="open-modal-crud" data-id="' + full.Id + '" data-action="Editar" data-entity="gafacultyservices" data-toggle="modal" data-target="#crudControlModal"><i class="fa fa-pencil"/></i></a> <a style="display:' + full.AccessControlDelete + '"title="Remover" href="javascript:void(0)" class="open-modal-crud" data-id="' + full.Id + '" data-action="Remover" data-entity="gafacultyservices" data-toggle="modal" data-target="#crudControlModal"><i class="fa fa-trash"/></i></a>';
+                }
+            },
+            //Cada dado representa uma coluna da tabela
+            { "data": "NOME", "name": "UNIDADE", "autoWidth": true },
+            { "data": "UNIDADE", "name": "CODIGO", "autoWidth": true },
+            { "data": "CURSO", "name": "TIPOAULA", "autoWidth": true },
+            { "data": "CATEGORIA", "name": "CATEGORIA", "autoWidth": true },
+            { "data": "OBSERVACOES", "name": "DOCENTE", "autoWidth": true },
+            { "data": "INSERCAO", "name": "INSERCAO", "autoWidth": true },
+            { "data": "DATAINSERCAO", "name": "DATAINSERCAO", "autoWidth": true },
+            { "data": "ACTUALIZACAO", "name": "ACTUALIZACAO", "autoWidth": true },
+            { "data": "DATAACTUALIZACAO", "name": "DATAACTUALIZACAO", "autoWidth": true },
+        ],
+        //Configuração da tabela para os checkboxes
+        'columnDefs': [
+            {
+                'targets': 0,
+                'checkboxes': {
+                    'selectRow': true
+                },
+            }
+        ], 'select': {
+            'style': 'multi'
+        },
+        'order': [[1, 'false']],
+        'rowCallback': function (row, data, dataIndex) {
+            // Get row ID
+            var rowId = data["Id"];
+            //if (data.GA_CURSOS_ID <= 0) $(row).closest("tr").find("td:eq(2)").css("background", "#55efc4");
+            //if (data.GA_CURSOS_ID > 0) $(row).closest("tr").find("td:eq(2)").css("background", "#f9ca24"); 
+            //Dra table and add selected option to previously selected checkboxes
+            $.each(values, function (i, r) {
+                if (rowId == r) {
+                    $(row).find('input[type="checkbox"]').prop('checked', true);
+                    $(row).closest("tr").addClass("selected");
+                }
+            })
+        },
+        drawCallback: function () {
+            processInfo(this.api().page.info(), 'paginateInfoDistribuicaoFaculdadeTable');
+        },
+        //Remove pagination from table and add to custom Div
+        initComplete: (settings, json) => {
+            $('#DistribuicaoFaculdadeTable_paginate').appendTo('#paginateDistribuicaoFaculdadeTable');
+        },
+    });
+};
+function handleDataGAtblUnidades() {
+    var table = $("#GAtblUnidades").DataTable({
+        "processing": true, // Para exibir mensagem de processamento a cada requisição
+        "serverSide": true, // Para processar as requisições no back-end
+        //"filter": false, // : está comentado porque estamos a usar filtros que enviamos no back-end
+        "orderMulti": false, // Opção de ordenação para uma coluna de cada vez.
+        //Linguagem PT
+        "language": {
+            "url": "/Assets/lib/datatable/pt-PT.json"
+        },
+        fixedHeader: {
+            header: true,
+            footer: true
+        },
+        "dom": '<"toolbox">rtp',//remove componentes i - for pagination information, l -length, p -pagination
+        "ajax": {
+            "url": "../../gamanagement/GetFacultyUnits", // POST TO CONTROLLER
+            "type": "POST",
+            "datatype": "json",
+            data: { }
+        },
+        "columns": [
+            { "data": "Id", "name": null, "autoWidth": true },
+            //Column customizada
+            {
+                sortable: false,
+                "render": function (data, type, full, meta) {
+                    return '<a title="' + full.NOME + '" href="/gamanagement/viewfacultyservices/' + full.Id + '?page=facultyservices"><i class="fa fa-search"></i></a> <a style="display:' + full.AccessControlEdit + '" title="Editar" target="_blank" href="/administration/editunit/' + full.Id +'"><i class="fa fa-pencil"/></i></a> ';
+                }
+            },
+            //Cada dado representa uma coluna da tabela
+            { "data": "SIGLA", "name": "SIGLA", "autoWidth": true },
+            { "data": "NOME", "name": "NOME", "autoWidth": true },
+            { "data": "NIVEL", "name": "NIVEL", "autoWidth": true },
+            { "data": "ESTADO", "name": "ESTADO", "autoWidth": true },
+            { "data": "INSERCAO", "name": "INSERCAO", "autoWidth": true },
+            { "data": "DATAINSERCAO", "name": "DATAINSERCAO", "autoWidth": true },
+            { "data": "ACTUALIZACAO", "name": "ACTUALIZACAO", "autoWidth": true },
+            { "data": "DATAACTUALIZACAO", "name": "DATAACTUALIZACAO", "autoWidth": true },
+        ],
+        //Configuração da tabela para os checkboxes
+        'columnDefs': [
+            {
+                'targets': 0,
+                'checkboxes': {
+                    'selectRow': true
+                },
+            }
+        ], 'select': {
+            'style': 'multi'
+        },
+        'order': [[1, 'false']],
+        'rowCallback': function (row, data, dataIndex) {
+            // Get row ID
+            var rowId = data["Id"];
+            //Dra table and add selected option to previously selected checkboxes
+            $.each(values, function (i, r) {
+                if (rowId == r) {
+                    $(row).find('input[type="checkbox"]').prop('checked', true);
+                    $(row).closest("tr").addClass("selected");
+                }
+            })
+        },
+        drawCallback: function () {
+            processInfo(this.api().page.info(), 'paginateInfoGAtblUnidades');
+        },
+        //Remove pagination from table and add to custom Div
+        initComplete: (settings, json) => {
+            $('#GAtblUnidades_paginate').appendTo('#paginateGAtblUnidades');
+        },
+    });
+};
+function handleDataGADocentesTable() {
+    var table = $("#GADocentesTable").DataTable({
+        "processing": true, // Para exibir mensagem de processamento a cada requisição
+        "serverSide": true, // Para processar as requisições no back-end
+        //"filter": false, // : está comentado porque estamos a usar filtros que enviamos no back-end
+        "orderMulti": false, // Opção de ordenação para uma coluna de cada vez.
+        //Linguagem PT
+        "language": {
+            "url": "/Assets/lib/datatable/pt-PT.json"
+        },
+        fixedHeader: {
+            header: true,
+            footer: true
+        },
+        "dom": '<"toolbox">rtp',//remove componentes i - for pagination information, l -length, p -pagination
+        "ajax": {
+            "url": "../../gamanagement/GetFacultyLecturers", // POST TO CONTROLLER
+            "type": "POST",
+            "datatype": "json",
+            data: { "UnidadeId": $('#UnidadeId').val(), "CursoId": $('#CursoId').val() }
+        },
+        "columns": [
+            { "data": "Id", "name": null, "autoWidth": true },
+            //Column customizada
+            {
+                sortable: false,
+                "render": function (data, type, full, meta) {
+                    return '<a style="display:' + full.AccessControlDocente + '" title="' + full.NOME + '" href="/gamanagement/facultyprofile/' + full.UTILIZADOR + '"><i class="fa fa-search"></i></a> <a style="display:' + full.AccessControlPessoa + '" title="Dados pessoais" href="/gpmanagement/viewusers/' + full.PESSOA +'"><i class="fa fa-user-edit"></i></a>';
+                }
+            },
+            //Cada dado representa uma coluna da tabela
+            { "data": "NOME", "name": "NOME", "autoWidth": true },
+            { "data": "TELEFONE", "name": "TELEFONE", "autoWidth": true },
+            { "data": "EMAIL", "name": "EMAIL", "autoWidth": true },
+            { "data": "GRAU", "name": "GRAU", "autoWidth": true },
+            { "data": "GRUPOS", "name": "GRUPOS", "autoWidth": true },
+            { "data": "INSERCAO", "name": "INSERCAO", "autoWidth": true },
+            { "data": "DATAINSERCAO", "name": "DATAINSERCAO", "autoWidth": true },
+            { "data": "ACTUALIZACAO", "name": "ACTUALIZACAO", "autoWidth": true },
+            { "data": "DATAACTUALIZACAO", "name": "DATAACTUALIZACAO", "autoWidth": true },
+        ],
+        //Configuração da tabela para os checkboxes
+        'columnDefs': [
+            {
+                'targets': 0,
+                'checkboxes': {
+                    'selectRow': true
+                },
+            }
+        ], 'select': {
+            'style': 'multi'
+        },
+        'order': [[1, 'false']],
+        'rowCallback': function (row, data, dataIndex) {
+            // Get row ID
+            var rowId = data["Id"];
+            //Dra table and add selected option to previously selected checkboxes
+            $.each(values, function (i, r) {
+                if (rowId == r) {
+                    $(row).find('input[type="checkbox"]').prop('checked', true);
+                    $(row).closest("tr").addClass("selected");
+                }
+            })
+        },
+        drawCallback: function () {
+            processInfo(this.api().page.info(), 'paginateInfoGADocentesTable');
+        },
+        //Remove pagination from table and add to custom Div
+        initComplete: (settings, json) => {
+            $('#GADocentesTable_paginate').appendTo('#paginateGADocentesTable');
         },
     });
 };
@@ -10142,6 +10364,11 @@ function SearchDataTable(tablename) {
         }
     });
     //Refresh
+    if (tablename == 'RHTimeTrackTbl') {
+        $("#" + tablename + ' tbody tr').remove();
+        table.draw();
+    }
+    else
     table.draw();
 }
 $('table').on('click', 'thead input[type="checkbox"]', function (e) {
@@ -11815,7 +12042,7 @@ $(document).on('change', '#CursoId', function () {
         cache: false,
         beforeSend: function () {
             // Loadin
-            loadIn();
+           // loadIn();
         },
         complete: function () {
         },
@@ -11827,7 +12054,7 @@ $(document).on('change', '#CursoId', function () {
             }
             $('#PlanoEstudo').html(s);
             // Loadout
-            loadOut();
+            //loadOut();
         }
     });
 });
@@ -11846,8 +12073,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
         if (!this.checked) {
             //$(this).closest("tr").find("input[type='number'],button,textarea,select,text").attr("disabled", "disabled");
             $(this).closest("tr").find(":input").not('input[type=checkbox]').attr("disabled", "disabled");
+            $(this).closest("tr").find("span").addClass("text-muted-piaget");
+            $(this).closest("tr").find("b").addClass("text-muted-piaget");
         } else {
             $(this).closest("tr").find(":input").not('input[type=checkbox]').removeAttr('disabled');
+            $(this).closest("tr").find("span").removeClass("text-muted-piaget");
+            $(this).closest("tr").find("b").removeClass("text-muted-piaget");
         }
     });
     $(".moduloBox").on("change", function (elem) {
@@ -12819,10 +13050,10 @@ function GetBIFc() {
                     Html += '<td>' + data.data[i].DATA + '</td>';
                     Html += '<td>' + data.data[i].VALOR + '</td>';
                 Html += '</tr>';
-                $("#spanTotalPayment").text(data.data[i].TOTAL);
+                $("#BIRptTotalSpan").text(data.data[i].TOTAL);
             }
             if (count > 0) {
-                $('#BIGPAGFCTbl tbody').html(Html);
+                $('#BIRptTbl tbody').html(Html);
                 excel.attr("href", "/xlsreports/GetFolhaCaixa?Login=" + Numero + "&DateIni=" + DateIni + "&DateEnd=" + DateEnd + "&PaymentMethod=" + MetodoPagamentoId + "&Employer=" + Employer + "&Relatorio=" + Relatorio);
                 excel.removeClass("disabled");
                 pdf.attr("href", "/pdfreports/GetFolhaCaixa?Login=" + Numero + "&DateIni=" + DateIni + "&DateEnd=" + DateEnd + "&PaymentMethod=" + MetodoPagamentoId + "&Employer=" + Employer + "&MetodoPagamentoTxt=" + MetodoPagamentoTxt + "&Relatorio=" + Relatorio + "&RelatorioTxt=" + RelatorioTxt);
@@ -12830,7 +13061,7 @@ function GetBIFc() {
             }
             else {
                 Html = '<tr><td colspan="8">Nenhum registo foi encontrado</td></tr>';
-                $('#BIGPAGFCTbl tbody').html(Html);
+                $('#BIRptTbl tbody').html(Html);
                 excel.addClass("disabled");
                 pdf.addClass("disabled");
             }
@@ -13014,9 +13245,9 @@ function GetBIGAApplications() {
                  }
                 }
               
-                $("#spanTotalPayment").text(count);
+                $("#BIRptTotalSpan").text(count);
                 if (count > 0) {
-                $('#BIGAApplicationsTbl tbody').html(Html);
+                    $('#BIRptTbl tbody').html(Html);
 
                 if (Relatorio == '1' || Relatorio == '3') {
                     excel.attr("href", "/xlsreports/GetApplicationsReports?ProcessoPai=" + Processo + "&curso=" + Curso + "&dateini=" + DateIni + "&dateend=" + DateEnd + "&identificacao=" + Identificacao + "&regfreq=" + RegFreq + "&reging=" + RegIng + "&alectivo=" + ALectivo + "&opcao=" + Opcao + "&fase=" + Fase + "&estado=" + Estado + "&sexo=" + Sexo + "&sala=" + Sala + "&resultado=" + Resultado + "&nota=" + Nota + "&nota2=" + Nota2 + "&finalizada=" + Finalizada + "&validada=" + Validada + "&files=" + Files + "&Pautas=" + Pautas + "&Salas=" + Salas + "&relatorio=" + Relatorio);
@@ -13032,7 +13263,7 @@ function GetBIGAApplications() {
             }
             else {
                 Html = '<tr><td colspan="8">Nenhum registo foi encontrado</td></tr>';
-                $('#BIGAApplicationsTbl tbody').html(Html);
+                    $('#BIRptTbl tbody').html(Html);
                 excel.addClass("disabled");
                 pdf.addClass("disabled");
             }
@@ -13145,11 +13376,11 @@ function GetBIStd() {
                 Html += '<td>' + data.data[i].DTCANDIDATURA + '</td>';
                 Html += '<td>' + data.data[i].ESTADO + '</td>';
                 Html += '</tr>';
-                $("#spanTotalPayment").text(data.data[i].TOTAL);
+                $("#BIRptTotalSpan").text(data.data[i].TOTAL);
             }
-            $("#spanTotalPayment").text(count);
+            $("#BIRptTotalSpan").text(count);
             if (count > 0) {
-                $('#BIGPAGFCTbl tbody').html(Html);
+                $('#BIRptTbl tbody').html(Html);
                 excel.attr("href", "/xlsreports/GetStudentsReports?Unidade=" + Unidade + "&curso=" + Curso + "&dateini=" + DateIni + "&dateend=" + DateEnd + "&ALectivo=" + ALectivo + "&Acurricular=" + Acurricular + "&RegFreq=" + RegFreq + "&Turma=" + Turma + "&Estatuto=" + Estatuto + "&GrauAcad=" + GrauAcad + "&Estado=" + Estado + "&Sexo=" + Sexo + "&Nacionalidade=" + Nacionalidade + "&Requests=" + Requests + "&EntidadeBolsa=" + EntidadeBolsa + "&BolsaConfirmada=" + BolsaConfirmada + "&nPrestacao=" + nPrestacao + "&nPrestacaoEmol=" + nPrestacaoEmol);
                 excel.removeClass("disabled");
                 pdf.attr("href", "/pdfreports/GetStudentsReports?Unidade=" + Unidade + "&curso=" + Curso + "&dateini=" + DateIni + "&dateend=" + DateEnd + "&ALectivo=" + ALectivo + "&Acurricular=" + Acurricular + "&RegFreq=" + RegFreq + "&Turma=" + Turma + "&Estatuto=" + Estatuto + "&GrauAcad=" + GrauAcad + "&Estado=" + Estado + "&Sexo=" + Sexo + "&Nacionalidade=" + Nacionalidade +  "&Requests=" + Requests + "&EntidadeBolsa=" + EntidadeBolsa + "&BolsaConfirmada=" + BolsaConfirmada + "&nPrestacao=" + nPrestacao + "&nPrestacaoEmol=" + nPrestacaoEmol+ "&filters=" + filters);
@@ -13157,7 +13388,7 @@ function GetBIStd() {
             }
             else {
                 Html = '<tr><td colspan="7">Nenhum registo foi encontrado</td></tr>';
-                $('#BIGPAGFCTbl tbody').html(Html);
+                $('#BIRptTbl tbody').html(Html);
                 excel.addClass("disabled");
                 pdf.addClass("disabled");
             }
@@ -13224,29 +13455,33 @@ function GetBITimeTrack() {
         success: function (data) {
             var Html = '';
             var count = 0;
-            for (var i = 0; i < data.data.length; i++) {
+            for (var i = 0; i < data.length; i++) {
                 count++;
                 Html += '<tr>';
-                Html += '<td>' + data.data[i].NUMERO + '</td>';
-                Html += '<td>' + data.data[i].NOME + '</td>';
-                Html += '<td>' + data.data[i].DEPARTAMENTO + '</td>';
-                Html += '<td>' + data.data[i].DATA + '</td>';
-                Html += '<td>' + data.data[i].SEMANA + '</td>';
-                Html += '<td>' + data.data[i].HORARIO + '</td>';
-                Html += '<td>' + data.data[i].P1 + '</td>';
-                Html += '<td>' + data.data[i].P2 + '</td>';
-                Html += '<td>' + data.data[i].P3 + '</td>';
-                Html += '<td>' + data.data[i].P4 + '</td>';
-                Html += '<td>' + data.data[i].PREVISTA + '</td>';
-                Html += '<td>' + data.data[i].EFETUADO + '</td>';
-                Html += '<td>' + data.data[i].HORAEXTRA + '</td>';
-                Html += '<td>' + data.data[i].HORAEXTRACON + '</td>';
-                Html += '<td>' + data.data[i].ATRASO + '</td>';
-                Html += '</tr>';
+                Html += '<td>' + data[i].NUMERO + '</td>';
+                Html += '<td>' + data[i].NOME + '</td>';
+                Html += '<td>' + data[i].DEPARTAMENTO + '</td>';
+                Html += '<td>' + data[i].DATA + '</td>';
+                Html += '<td>' + data[i].SEMANA + '</td>';
+                //Html += '<td>' + data.data[i].HORARIO + '</td>';
+                Html += '<td>' + data[i].P1 + '</td>';
+                Html += '<td>' + data[i].P2 + '</td>';
+                Html += '<td>' + data[i].P3 + '</td>';
+                Html += '<td>' + data[i].P4 + '</td>';
+                Html += '<td>' + data[i].P5 + '</td>';
+                Html += '<td>' + data[i].P6 + '</td>';
+                Html += '<td>' + data[i].P7 + '</td>';
+                Html += '<td>' + data[i].P8 + '</td>';
+                //Html += '<td>' + data.data[i].PREVISTA + '</td>';
+                //Html += '<td>' + data.data[i].EFETUADO + '</td>';
+                //Html += '<td>' + data.data[i].HORAEXTRA + '</td>';
+                //Html += '<td>' + data.data[i].HORAEXTRACON + '</td>';
+                //Html += '<td>' + data.data[i].ATRASO + '</td>';
+                //Html += '</tr>';
             }
-            $("#spanTotalPayment").text(count);
+            $("#BIRptTotalSpan").text(count);
             if (count > 0) {
-                $('#BIGPAGFCTbl tbody').html(Html);
+                $('#BIRptTbl tbody').html(Html);
                 //excel.attr("href", "/xlsreports/GetFolhaCaixa?Login=" + Numero + "&DateIni=" + DateIni + "&DateEnd=" + DateEnd + "&PaymentMethod=" + MetodoPagamentoId + "&Employer=" + Employer + "&Relatorio=" + Relatorio);
                 //excel.removeClass("disabled");
                 //pdf.attr("href", "/pdfreports/GetTimeTrackReport?Numero=" + Numero + "&DateIni=" + DateIni + "&DateEnd=" + DateEnd + "&Departamento=" + Departamento + "&Relatorio=" + Relatorio + "&filters=" + RelatorioTxt);
@@ -13254,7 +13489,7 @@ function GetBITimeTrack() {
             }
             else {
                 Html = '<tr><td colspan="8">Nenhum registo foi encontrado</td></tr>';
-                $('#BIGPAGFCTbl tbody').html(Html);
+                $('#BIRptTbl tbody').html(Html);
                 excel.addClass("disabled");
                 pdf.addClass("disabled");
             }
@@ -13300,23 +13535,26 @@ $(document).on("change", ".timetrackchangemov", function () {
     $('#TimeTrackMov').val(val);
 });
 
-// Toogle View
-/*
-function togglesmHalfTTR(btn) {
-    if ($('div').hasClass('col-md-9')) {
-        $('.col-md-9').addClass('col-md-11').removeClass('col-md-9');
-        $('.col-md-3').addClass('col-md-1').removeClass('col-md-3');
-        $(btn).next('.card-header').hide();
-        $(this).addClass('active');
+function AddRowTimeTrack(elem) {
+    var html = '';
+    var PPR = $('#TimePPR').val();
+    html += "<tr>";
+    html += '<td><button type="button" class="btn btn-danger btn-sm" onclick="RemoveRowTimeTrack(this)"><i class="fa fa-trash"></i></button></td>';
+    html += '<td><input type="time" class="form-control datepickerHourPicker" value="" name="Movs[]"/></td>';
+    html += "</tr>";
+    $("#TimeTrackMovTable").append(html);
+    if ($('#TimeTrackMovTable tr').length >= PPR) {
+        $(elem).hide();
+        //$("#ProcessamentoTimetrackField").attr("disabled", true);
     }
-    else {
-        $('.col-md-11').addClass('col-md-9').removeClass('col-md-11');
-        $('.col-md-1').addClass('col-md-3').removeClass('col-md-1');
-        if ($('#processarMovs').html().length > 0)
-           $(btn).next('.card-header').show();
-        $(this).removeClass('active');
-    }
-}*/
+}
+function RemoveRowTimeTrack(elem) {
+    var PPR = $('#TimePPR').val();
+    $(elem).parent().parent().remove();
+    if ($('#TimeTrackMovTable tr').length >= PPR) { } else $('#AddRowTimeTrackBtn').show();
+}
+
+
 
 
 /*

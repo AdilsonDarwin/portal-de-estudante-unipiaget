@@ -1289,7 +1289,7 @@ select.form-control[multiple], select.form-control[size], textarea.form-control 
 }
 
 [dir] .btn.focus, [dir] .btn:focus {
-    box-shadow: 0 0 0 1px #5567ff;
+   /* box-shadow: 0 0 0 1px rgba(39, 44, 51, 0.125);*/
 }
 
 .btn.disabled, .btn:disabled {
@@ -1309,7 +1309,8 @@ select.form-control[multiple], select.form-control[size], textarea.form-control 
     }
 
         [dir] .btn:not(:disabled):not(.disabled).active:focus, [dir] .btn:not(:disabled):not(.disabled):active:focus {
-            box-shadow: 0 0 0 1px #5567ff, inset 0 3px 5px rgba(39, 44, 51, 0.125);
+            /*     box-shadow: 0 0 0 1px #5567ff, inset 0 3px 5px rgba(39, 44, 51, 0.125);
+       */
         }
 
 a.btn.disabled, fieldset:disabled a.btn {
@@ -5535,7 +5536,7 @@ body, html {
 
 [dir] .page-separator__text {
     border-radius: .25rem;
-    background-color: #f5f7fa;
+    /*background-color: #f5f7fa;*/
 }
 
 [dir=ltr] .page-separator__text {
@@ -9493,7 +9494,7 @@ li > .fancytree-default > .fancytree-title {
 }
 
     #tableOccurrenceplans tr th {
-        padding: 4px !important;
+        padding: 2px !important;
         text-transform: uppercase;
         border-bottom: 0 !important;
         border-top: 0 !important;
@@ -9983,58 +9984,28 @@ li > .fancytree-default > .fancytree-title {
 .text-white-50 {
     color: hsla(0,0%,100%,.5) !important
 }
-
-.btn-accent {
-    color: #fff
+.bg-light td {
+    border-top: 0 !important
+}
+.fullbleed {
+    position: absolute;
+    top: 0;
+    bottom: 0
 }
 
-[dir] .btn-accent {
-    background-color: #ed0b4c;
-    border-color: #ed0b4c;
-    box-shadow: inset 0 1px 0 hsla(0,0%,100%,.15),0 1px 1px rgba(39,44,51,.075)
+[dir=ltr] .fullbleed, [dir=rtl] .fullbleed {
+    left: 0;
+    right: 0
 }
 
-.btn-accent:hover {
-    color: #fff
+.absolute-top, .position-absolute-top {
+    position: absolute;
+    top: 0
 }
 
-[dir] .btn-accent:hover {
-    background-color: #c80940;
-    border-color: #bc093c
+.card-nav .tab-content > .fullbleed, [dir] .card > .fullbleed {
+    border-radius: .5rem
 }
-
-.btn-accent.focus, .btn-accent:focus {
-    color: #fff
-}
-
-[dir] .btn-accent.focus, [dir] .btn-accent:focus {
-    background-color: #c80940;
-    border-color: #bc093c;
-    box-shadow: inset 0 1px 0 hsla(0,0%,100%,.15),0 1px 1px rgba(39,44,51,.075),0 0 0 1px rgba(240,48,103,.5)
-}
-
-.btn-accent.disabled, .btn-accent:disabled {
-    color: #fff
-}
-
-[dir] .btn-accent.disabled, [dir] .btn-accent:disabled {
-    background-color: #ed0b4c;
-    border-color: #ed0b4c
-}
-
-.btn-accent:not(:disabled):not(.disabled).active, .btn-accent:not(:disabled):not(.disabled):active, .show > .btn-accent.dropdown-toggle {
-    color: #fff
-}
-
-[dir] .btn-accent:not(:disabled):not(.disabled).active, [dir] .btn-accent:not(:disabled):not(.disabled):active, [dir] .show > .btn-accent.dropdown-toggle {
-    background-color: #bc093c;
-    border-color: #b00838
-}
-
-    [dir] .btn-accent:not(:disabled):not(.disabled).active:focus, [dir] .btn-accent:not(:disabled):not(.disabled):active:focus, [dir] .show > .btn-accent.dropdown-toggle:focus {
-        box-shadow: inset 0 3px 5px rgba(39,44,51,.125),0 0 0 1px rgba(240,48,103,.5)
-    }
-
 
 
 
