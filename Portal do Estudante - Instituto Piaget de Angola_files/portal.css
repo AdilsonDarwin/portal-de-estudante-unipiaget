@@ -274,8 +274,8 @@
 }
 /* ********** hero ********** */
 .hero {
-    height: 240px;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://rna.ao/rna.ao/wp-content/uploads/2020/10/Unipiaget.jpg);
+    height: 240px;/*
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://rna.ao/rna.ao/wp-content/uploads/2020/10/Unipiaget.jpg);*/
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -406,7 +406,7 @@
 }
 
 .inner-col {
-    background-color: #a00;
+    background-color: #fff;
 }
 /* ********** .side-menu-nav ********** */
 .side-menu-nav .inner-col {
@@ -585,9 +585,10 @@
 .main{
     border: 1px solid #dedede;
     background-color: #fff;
+    padding: .5rem !important;
 }
-.main .card-body .nav-tabs{
-    margin-bottom: .5rem !important;
+.main .card-body .nav-tabs{/*
+    margin-bottom: .5rem !important;*/
 }
 .sub-head-table{
     /*margin-top: .5rem !important;
@@ -637,6 +638,9 @@
     border-top: 1px solid #dee2e6;
     background-color: #eef3fb;
 }
+.main .card-header h5{
+    padding: 0 !important;
+}
 .main .card-body{
     padding-bottom: 0 !important;
     padding: 0rem;
@@ -656,7 +660,7 @@
 }
 .main-apply .card-header{
     background-color: #444 !important;
-    border-radius: 8px 8px 0 0;
+    border-radius: 4px;
 }
 .main-apply .card-header h2{
     text-align: center;
@@ -667,6 +671,17 @@
 }
 .main-apply .card-body{
     border: 1px solid #dedede;
+    border-radius: 4px;
+    border: none !important;
+    box-shadow: 1px 1px 4px rgba(0,0,0, .2) !important;
+    margin-top: 1rem;
+    padding-bottom: .5rem !important;
+    overflow: hidden !important;
+}
+.main-apply .card-body{/*
+    background-color: rgba(142, 175, 209, 0.1);
+    background-color: rgba(218, 192, 121, 0.3) !important;*/
+    background-color: rgba(0, 0, 0, 0.03) !important;
 }
 .apply-section h4{
     background-color: #444 !important;
@@ -685,17 +700,102 @@
     list-style: none;
 }
 .main-apply table i{
-    color: #e9a319;
+    color: #d9534f;
     visibility: visible !important;
 }
 .main-apply table i:hover{
     color: #353535;
 }
-
-/* ================================= 4 - EMOLUMENTOS ================================= */
-.main-finance{
-    padding: 1rem;
+.main-apply thead{
+    background-color: #979797;
 }
+.main-apply thead th[scope=col]{
+    color: #fff !important;
+}
+.tab-pane-description h3{ 
+    font-size: 1.25rem;
+    padding: 0 !important;
+}
+.tab-pane-description h4{ 
+    font-size: 1rem;
+    padding: 0 !important;
+}
+.tab-pane-description hgroup h6 span{ 
+    font-weight: 100 !important;
+}
+.main-apply  .nav-tabs{
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+.main-apply  .tab-pane{
+    overflow-x: auto !important;
+}
+.main-apply tbody tr{
+    background-color: #fff !important;
+}
+@media only screen and (max-width: 1024px){
+    .tab-pane-description{
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+}
+/* ================================= 3 - PERCURSO ================================= */
+.main-percurso ul,
+.main-percurso h4,
+.main-percurso p{
+    margin-bottom: 0 !important;
+}
+.nav-tabs{
+    border-bottom: 1px solid rgba(0,0,0,.075) !important;
+}
+.main-percurso .nav-tabs .nav-link {
+    border: 0 !important;
+    padding: 0.5rem 1rem !important;
+}
+.main-percurso .nav-link {
+    padding: 0.5rem 1rem;
+    padding: 0 !important;
+}
+.main-percurso .nav-link.active{
+    border-top-left-radius: 4px !important;
+    border-top-right-radius: 4px !important;
+    padding: 0.5rem 1rem !important;
+    border: 0 !important;
+}
+.tab-pane{
+    padding-top: 1rem;
+}
+.tab-pane h2{
+    font-size: 24px !important;
+}
+.tab-pane h3{
+    font-size: 18px !important;
+}
+.tab-pane h4{
+    font-size: 16px !important;
+}
+.main-percurso .card{
+    margin-bottom: 0 !important;
+}
+.main-percurso .card-header{
+    background-color: #353535 !important;
+}
+.main-percurso .card-header span,
+.main-percurso .card-header i{
+    color: #fff !important;
+}
+.card-body .table {
+    margin-bottom: 0rem;
+}
+.tab-footer{
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0,0,0,.075);
+}
+.tab-footer strong{
+    color: #CD201F;
+}
+/* ================================= 4 - EMOLUMENTOS ================================= */
 .main-finance .table thead th{
     padding: .5rem !important;
     font-size: 11px !important;
