@@ -251,11 +251,11 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #f0bf5f;
+    background-color: #cea44b;
 }
 
     ::-webkit-scrollbar-thumb:hover {
-        background-color: #d8ab55;
+        background-color: #B99343;
     }
 /* ********** portal-container ********** */
 #portal-container {
@@ -433,7 +433,7 @@
         }
 
 .list-active {
-    border-left: 4px solid #f0bf5f !important;
+    border-left: 4px solid #cea44b !important;
     border-radius: 4px !important; 
 }
 
@@ -531,51 +531,6 @@
 
 
 
-/* ********** 1 - INDEX ********** */
-.aside-painel {
-    background-color: #fff;
-    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important;
-    border-radius: 8px;
-    padding-bottom: .5rem;
-}
-
-.aside-title {
-    border-bottom: 4px solid #f0bf5f;
-    background-color: #353535;
-    border-radius: 8px 8px 0 0;
-}
-
-    .aside-title h5 {
-        color: #f1f1f2;
-        margin-bottom: 0 !important;
-        padding: .5rem 1rem;
-    }
-
-    .pdf-list h6 {
-        margin-bottom: initial !important;
-        margin: .5rem !important;
-        padding: .5rem .5rem;
-        border-radius: 4px;
-        color: #353535;
-        background-color: #f1f1f1;
-    }
-
-    .pdf-list a {
-        padding-left: 24px;
-        color: #353535;
-    }
-
-        .pdf-list a:hover,
-        .pdf-list a:active {
-            color: #f0bf5f;
-        }
-
-        
-/* ********** 2 - CANDIDATURA ********** */
-
-
-
-
 
 
 
@@ -605,13 +560,12 @@
         color: #fff !important;
     }
     .sub-head-table .nav-link:hover{
-    color: #fff !important;
     background-color: #dedede !important;
     }
 
 .main .nav-link.active{
     color: #fff !important;
-    background-color: #e9a319 !important;
+    background-color: #cea44b !important;
 }
 .main-h2{
     padding: 1rem 0 !important;
@@ -646,17 +600,54 @@
     padding: 0rem;
 }
 
+/* ================================= 1 - INDEX ================================= */
+.aside-painel {
+    background-color: #fff;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important;
+    border-radius: 8px;
+    padding-bottom: .5rem;
+}
 
+.aside-title {
+    border-bottom: 4px solid #cea44b;
+    background-color: #353535;
+    border-radius: 8px 8px 0 0;
+    padding: .5rem 1rem;
+}
+
+    .aside-title h5 {
+        color: #f1f1f2;
+        margin-bottom: 0 !important;
+    }
+
+    .pdf-list h6 {
+        margin-bottom: initial !important;
+        margin: .5rem !important;
+        padding: .5rem .5rem;
+        border-radius: 4px;
+        color: #353535;
+        background-color: #f1f1f1;
+    }
+
+    .pdf-list a {
+        padding-left: 24px;
+        color: #353535;
+    }
+
+        .pdf-list a:hover,
+        .pdf-list a:active {
+            color: #B99343;
+        }
 /* ================================= 2 - CANDIDATURAS ================================= */
 .apply-body{
     margin: 1rem 0;
 }
 .apply-btn{
     color: #fff !important;
-    background-color: #e9a319 !important;
+    background-color: #cea44b !important;
 }
 .apply-btn:hover{
-    background-color: #dd9b18 !important;
+    background-color: #cea44b !important;
 }
 .main-apply .card-header{
     background-color: #444 !important;
@@ -669,6 +660,9 @@
     margin: 0 auto;
     color: #fff;
 }
+.main-apply .nav-link.active {
+    background-color: #cea44b !important;
+}
 .main-apply .card-body{
     border: 1px solid #dedede;
     border-radius: 4px;
@@ -678,9 +672,7 @@
     padding-bottom: .5rem !important;
     overflow: hidden !important;
 }
-.main-apply .card-body{/*
-    background-color: rgba(142, 175, 209, 0.1);
-    background-color: rgba(218, 192, 121, 0.3) !important;*/
+.main-apply .card-body{
     background-color: rgba(0, 0, 0, 0.03) !important;
 }
 .apply-section h4{
@@ -700,29 +692,29 @@
     list-style: none;
 }
 .main-apply table i{
-    color: #d9534f;
+    color: #cea54be3;
     visibility: visible !important;
 }
 .main-apply table i:hover{
-    color: #353535;
+    color: #B99343;
 }
 .main-apply thead{
-    background-color: #979797;
+    background-color: #787878;
 }
 .main-apply thead th[scope=col]{
     color: #fff !important;
 }
-.tab-pane-description h3{ 
+.tab-pane-description hgroup h3 span{ 
+    font-size: 1rem;
+}
+.tab-pane-description hgroup h3 i{ 
     font-size: 1.25rem;
-    padding: 0 !important;
 }
 .tab-pane-description h4{ 
     font-size: 1rem;
     padding: 0 !important;
 }
-.tab-pane-description hgroup h6 span{ 
-    font-weight: 100 !important;
-}
+
 .main-apply  .nav-tabs{
     padding-top: 1rem !important;
     padding-bottom: 1rem !important;
@@ -795,7 +787,16 @@
 .tab-footer strong{
     color: #CD201F;
 }
-/* ================================= 4 - EMOLUMENTOS ================================= */
+.tab-header h2{
+    font-size: 1.25rem !important;
+}
+.tab-header i{
+    font-size: 1.25rem !important;
+}
+.tab-header h3{
+    font-size: 1rem !important;
+}
+/* ================================= 4 - AREA FINANCEIRA ================================= */
 .main-finance .table thead th{
     padding: .5rem !important;
     font-size: 11px !important;
