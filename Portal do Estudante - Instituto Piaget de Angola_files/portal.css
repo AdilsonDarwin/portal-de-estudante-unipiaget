@@ -1066,3 +1066,31 @@
 .tutorials-container .embed-responsive-item{
     
 }
+
+.tutorials-container .fa-user,
+.tutorials-container .fa-calendar-days,
+.tutorials-container .fa-clock{
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.tutorials-container .fa-user{
+    color: #663399;
+    background-color: rgb(102, 51, 153, .3);
+    color: rgb(205, 32, 31);
+    background-color: rgb(205, 32, 31, .3);
+    color: #353535;
+    background-color: rgb(236, 160, 33, .2);
+}
+.tutorials-container .fa-calendar-days{
+    color: #eca021;
+    background-color: rgb(236, 160, 33, .3);
+    color: #0A66C2;
+    background-color: rgb(10, 102, 194, .3);
+    color: #353535;
+    background-color: rgb(236, 160, 33, .2);
+}
+.tutorials-container .fa-clock{
+    color: #353535;
+    background-color: rgb(236, 160, 33, .2);
+}
