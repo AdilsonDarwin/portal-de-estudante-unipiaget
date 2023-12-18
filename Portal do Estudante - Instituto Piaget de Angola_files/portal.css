@@ -176,12 +176,6 @@
 
 
 /* PORTAL SKELETON */
-
-
-#portal-container {
-    font-family: "Exo 2";
-}
-
 .position-absolute {
     position: absolute !important;
 }
@@ -190,8 +184,6 @@
     list-style: none;
     padding-left: 0;
 }
-
-
 /* ********** table-bg ********** */
 .pending-ad {
     background-color: #FED8B8 !important;
@@ -206,44 +198,44 @@
 }
 /* ********** my-gap ********** */
 .gap-ad-4 {
-    gap: 4px;
+    gap: .25rem;
 }
 
 .gap-ad-8 {
-    gap: 8px;
+    gap: .5rem;
 }
 
 .gap-ad-12 {
-    gap: 12px;
+    gap: .75rem;
 }
 
 .gap-ad-16 {
-    gap: 16px;
+    gap: 1rem;
 }
 
 .gap-ad-24 {
-    gap: 24px;
+    gap: 1.5rem;
 }
 
 .gap-ad-32 {
-    gap: 32px;
+    gap: 2rem;
 }
 /* ********** my-radius ********** */
 .rad-ad-4 {
-    border-radius: 4px;
+    border-radius: .25rem;
 }
 
 .rad-ad-8 {
-    border-radius: 8px;
+    border-radius: .5rem;
 }
 
 .rad-ad-16 {
-    border-radius: 16px;
+    border-radius: 1rem;
 }
 /* ********** scroll bar ********** */
 ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: .5rem;
+    height: .5rem;
 }
 
 ::-webkit-scrollbar-track {
@@ -260,6 +252,7 @@
 /* ********** portal-container ********** */
 #portal-container {
     /*background-color: #eeeeee;*/
+    font-family: "Exo 2";
 }
 
     #portal-container a {
@@ -274,8 +267,8 @@
 }
 /* ********** hero ********** */
 .hero {
-    height: 240px;/*
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://rna.ao/rna.ao/wp-content/uploads/2020/10/Unipiaget.jpg);*/
+    height: 240px; /*
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://rna.ao/rna.ao/wp-content/uploads/2020/10/Unipiaget.jpg); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -399,7 +392,6 @@
     }
 /* ********** main-container ********** */
 .main-container {
-    /*background-color: #eee;*/
     padding-top: 142px;
     padding-bottom: 80px;
     min-height: 100vh;
@@ -572,9 +564,6 @@
     color: #a7a7a7;
 }
 
-
-
-
 .main thead{
     border-left: 1px solid rgba(0,0,0,.075);
     border-bottom: 1px solid rgba(0,0,0,.075);
@@ -650,7 +639,7 @@
     background-color: #cea44b !important;
 }
 .main-apply .card-header{
-    background-color: #444 !important;
+    background-color: #353535 !important;
     border-radius: 4px;
 }
 .main-apply .card-header h2{
@@ -700,6 +689,7 @@
 }
 .main-apply thead{
     background-color: #787878;
+    background-color: #565656;
 }
 .main-apply thead th[scope=col]{
     color: #fff !important;
