@@ -681,7 +681,7 @@
     list-style: none;
 }
 .main-apply table i{
-    color: #cea54be3;
+    color: rgba(206, 165, 75, 0.89);
     visibility: visible !important;
 }
 .main-apply table i:hover{
@@ -824,4 +824,245 @@
 .main-horarios table th[scope=row]{
     border-bottom: 1px solid rgba(0,0,0, .085) !important;
     border-top: 1px solid rgba(0,0,0, .085) !important;
+}
+
+
+
+
+/* ================================= tutoriais ================================= */
+
+.tutorials-main{/*
+    max-width: 1900px;
+    background-color: #f3f4f5;
+    color: #333;
+    min-width: 200px;
+    margin: 0 auto;*/
+}
+.tutorials-main{
+    max-width: 1900px !important;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+
+
+
+
+
+
+
+.aside-container{
+    background-color: #353535;
+    background-color: #f4f5f6;/*
+    min-width: 220px;
+    min-height: 100vh;*/
+    min-width: 320px;
+    border-right: 2px solid #eca021;
+    border-right: 2px solid #dfdfdf;
+}
+
+
+
+
+
+.aside-container h1{
+    font-size: 16px;
+    color: #333;
+    max-width: 200px;
+}
+.aside-container h1 span{
+    position: relative;
+}
+.aside-container h1 span::before{
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: #eca021;
+}
+.aside-container .card{
+    max-width: 320px;
+    background-color: transparent;
+    border-radius: 8px !important;
+}
+
+.aside-container .card-header{
+    max-width: 320px;
+    height: fit-content;
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color: #353535;
+    border-bottom: 2px solid #eca021;
+    border-radius: 4px 4px 0 0;
+}
+.aside-container .card-header h2{
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.aside-container .card-header button{
+    color: #fff !important;
+}
+.aside-container .card-body{
+    max-width: 320px;
+    max-height: 220px;
+    background-color: #f4f5f6;
+    border-radius: 0 0 4px 4px;
+    border: 1px solid #dddddd;
+}
+
+
+
+
+
+
+.aside-nav-tutorials ul li{
+    padding: 4px 8px;
+    width: 100%;
+    background-color: #333;
+    background-color: #cccccc;
+    background-color: #ebebeb;
+    color: #333 ;
+    border-radius: 4px;
+    transition: .2s;
+}
+.aside-nav-tutorials ul .title-list-tutorial{
+    background-color: #b4b4b4;
+    background-color: transparent;
+}
+.aside-nav-tutorials ul .title-list-tutorial h6{
+    color: #979797 !important;
+    position: relative;
+}
+.aside-nav-tutorials ul .title-list-tutorial h6::after{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 2px;
+}
+.aside-nav-tutorials ul li:hover{
+    transform: scale(1.05);
+    background-color: #c4c4c4;
+    cursor: pointer;
+}
+.aside-nav-tutorials ul .title-list-tutorial:hover{
+    transform: scale(1);
+    cursor: inherit;
+    background-color: transparent;
+}
+.aside-nav-tutorials .active-list{
+    color: #fff !important;
+    background-color: #eca021 !important;  
+}
+
+
+
+
+
+
+
+
+
+
+
+.tutorials-container{
+    background-color: #f3f4f5;
+    color: #333;
+    min-width: 200px;
+    margin: 0 auto;
+}
+.tutorials-container .col-sm{
+    background-color: #fff;
+    color: #333;
+    padding: 16px;
+    max-width: 276px;
+    min-width: 276px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .3s;
+    box-shadow: 1px 1px 4px rgba(0,0,0, .2) !important;
+}
+.tutorials-container .col-sm:hover{
+    background-color: #dee1e4;
+    .play-icon{
+        width: 44px;
+        height: 44px;
+        background-color: #fff;
+        background-color: #fff;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+        transition: .3s;
+    }
+    .play-icon:hover{
+        box-shadow: 2px 2px 8px rgba(255,255,255, 5) !important;
+    }
+    .fa-play{
+        font-size: 18px;
+        color: #333;
+        color: #333;
+    }
+}
+.tutorials-container .thumb-video{
+    height: 280px;
+    height: 160px;
+    font-size: 32px;
+    font-weight: bolder;
+    border-radius: 8px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.tutorials-container img{
+    border-radius: 100%;
+}
+
+.tutorials-container h3{
+    font-size: 16px;
+    color: #333;
+}
+
+
+
+
+@media only screen and (max-width: 768px){
+    .aside-container{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 575px){
+    .tutorials-content .row .col-sm{
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width: 1440px){
+
+}
+
+
+.tutorials-container .modal-dialog{
+    background-color: red;
+}
+.tutorials-container .modal-content{
+    background-color: yellow;
+}
+.tutorials-container .modal-header{
+    background-color: #333;
+}
+.tutorials-container .modal-body{
+    background-color: #fff;
+}
+
+.tutorials-container .player__embed{
+    background-color: #dedede;
+}
+.tutorials-container .embed-responsive-item{
+    
 }
