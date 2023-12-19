@@ -829,168 +829,153 @@
 
 
 
-/* ================================= tutoriais ================================= */
 
-.tutorials-main{/*
+
+
+
+/* ================================= training-main-container ================================= */
+.training-main-container {
+    margin: 0 auto;
     max-width: 1900px;
-    background-color: #f3f4f5;
-    color: #333;
-    min-width: 200px;
-    margin: 0 auto;*/
-}
-.tutorials-main{
-    max-width: 1900px !important;
+    min-height: 105vh;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
 }
-
-
-
-
-
-
-
-
-.aside-container{
-    background-color: #353535;
-    background-color: #f4f5f6;/*
-    min-width: 220px;
-    min-height: 100vh;*/
-    min-width: 320px;
-    border-right: 2px solid #eca021;
-    border-right: 2px solid #dfdfdf;
+/* *********************************** aside-training-container */
+.aside-training-container{
+    width: fit-content;
+    padding: 1.5rem 1.5rem 1.5rem 0;
+    
 }
 
+    .offcanvas-header{
+        background-color: #fff;
+    }
+    .offcanvas-header h1{
+        font-size: 16px !important;
+        color: #333;
+        max-width: 200px;
+    }
+    .offcanvas-header .btn-close {
+        border-radius: 4px !important;
+        background-color: #fff !important;
+    }
+    .offcanvas-header h1 span{
+        position: relative;
+    }
+    .offcanvas-header h1 span::before{
+        position: absolute;
+        bottom: -2px;
+        content: '';
+        width: 100%;
+        height: 2px;
+        background-color: #eca021;
+    }
+    .nav-training-container .accordion .card{
+        width: 100%;
+        background-color: transparent;
+        border-radius: 8px !important;
+    }
+
+    .nav-training-container .accordion .card-header{
+        width: 320px;
+        height: fit-content;
+        padding: 0 !important;
+        margin: 0 !important;
+        background-color: #575757;
+        border-bottom: 2px solid #575757;
+        border-radius: 4px 4px 0 0;
+    }
+        .nav-training-container .accordion .card-header h2{
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+            .nav-training-container .accordion .card-header h2 button{
+                color: #fff !important;
+                text-decoration: none !important;
+            }
+
+    .nav-training-container .accordion .card-body{
+        max-width: 320px;
+        max-height: 220px;
+        background-color: #ffffff;
+        border-radius: 0 0 4px 4px;
+        border: 1px solid #dddddd;
+        overflow-y: hidden;
+        max-height: fit-content;
+    }
+        .nav-training-container .accordion .card-body ol{
+            margin-top: .5rem;
+            padding-left: 1rem !important;
+        }
+            .nav-training-container .accordion .card-body ol::marker{
+                color: #adadad;
+            }
+        .nav-training-container .accordion .card-body ol li{
+            padding: 4px 8px;
+            width: 100%;
+            background-color: #ebebeb;
+            color: #333 ;
+            border-radius: 4px;
+            transition: .2s;
+        }
+            .nav-training-container .accordion .card-body ol li:hover{
+                background-color: #cccccc;
+                transform: scale(1.05);
+            }
+        .nav-training-container .accordion .card-body a{
+            text-decoration: none !important;
+            color: #575757;
+        }
+
+    .nav-training-container .accordion .card-body .active-list{
+        color: #fff !important;
+        background-color: #eca021 !important;
+    }
 
 
 
 
-.aside-container h1{
-    font-size: 16px;
-    color: #333;
-    max-width: 200px;
-}
-.aside-container h1 span{
-    position: relative;
-}
-.aside-container h1 span::before{
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    content: '';
+/* *********************************** main-training */
+.main-training{
     width: 100%;
-    height: 2px;
-    background-color: #eca021;
-}
-.aside-container .card{
-    max-width: 320px;
-    background-color: transparent;
-    border-radius: 8px !important;
-}
-
-.aside-container .card-header{
-    max-width: 320px;
-    height: fit-content;
-    padding: 0 !important;
-    margin: 0 !important;
-    background-color: #353535;
-    border-bottom: 2px solid #eca021;
-    border-radius: 4px 4px 0 0;
-}
-.aside-container .card-header h2{
-    padding: 0 !important;
-    margin: 0 !important;
-}
-.aside-container .card-header button{
-    color: #fff !important;
-}
-.aside-container .card-body{
-    max-width: 320px;
-    max-height: 220px;
-    background-color: #f4f5f6;
-    border-radius: 0 0 4px 4px;
-    border: 1px solid #dddddd;
-}
-
-
-
-
-
-
-.aside-nav-tutorials ul li{
-    padding: 4px 8px;
-    width: 100%;
-    background-color: #333;
-    background-color: #cccccc;
-    background-color: #ebebeb;
-    color: #333 ;
-    border-radius: 4px;
-    transition: .2s;
-}
-.aside-nav-tutorials ul .title-list-tutorial{
-    background-color: #b4b4b4;
-    background-color: transparent;
-}
-.aside-nav-tutorials ul .title-list-tutorial h6{
-    color: #979797 !important;
-    position: relative;
-}
-.aside-nav-tutorials ul .title-list-tutorial h6::after{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    content: '';
-    width: 100%;
-    height: 2px;
-}
-.aside-nav-tutorials ul li:hover{
-    transform: scale(1.05);
-    background-color: #c4c4c4;
-    cursor: pointer;
-}
-.aside-nav-tutorials ul .title-list-tutorial:hover{
-    transform: scale(1);
-    cursor: inherit;
-    background-color: transparent;
-}
-.aside-nav-tutorials .active-list{
-    color: #fff !important;
-    background-color: #eca021 !important;  
-}
-
-
-
-
-
-
-
-
-
-
-
-.tutorials-container{
     background-color: #f3f4f5;
-    color: #333;
-    min-width: 200px;
-    margin: 0 auto;
 }
-.tutorials-container .col-sm{
+
+.main-training-h2{
+    padding: 1.5rem 1.5rem .5rem 1.5rem;
+    color: #333 !important;
+    opacity: .7;
+    font-size: 1.25rem;
+}
+
+.main-training-h2 span{
+    color: #a7a7a7 !important;
+}
+
+.main-training .row{
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    padding: .5rem 1.5rem 1.5rem 1.5rem;
+    justify-content: center;
+}
+
+.main-training .col-sm{
     background-color: #fff;
     color: #333;
     padding: 16px;
-    max-width: 276px;
-    min-width: 276px;
+    max-width: 308px;
+    min-width: 308px;
     border-radius: 8px;
     cursor: pointer;
     transition: .3s;
     box-shadow: 1px 1px 4px rgba(0,0,0, .2) !important;
 }
-.tutorials-container .col-sm:hover{
+.main-training .col-sm:hover{
     background-color: #dee1e4;
     .play-icon{
         width: 44px;
         height: 44px;
-        background-color: #fff;
         background-color: #fff;
         display: flex !important;
         justify-content: center;
@@ -1004,10 +989,9 @@
     .fa-play{
         font-size: 18px;
         color: #333;
-        color: #333;
     }
 }
-.tutorials-container .thumb-video{
+.main-training .thumb-video{
     height: 280px;
     height: 160px;
     font-size: 32px;
@@ -1018,79 +1002,43 @@
     background-size: cover;
 }
 
-.tutorials-container img{
+.main-training img{
     border-radius: 100%;
 }
 
-.tutorials-container h3{
+.main-training h3{
     font-size: 16px;
     color: #333;
 }
 
-
-
-
-@media only screen and (max-width: 768px){
-    .aside-container{
-        display: none;
-    }
+/* *********************************** main-training */
+.training-main-container .modal-dialog{
+    background-color: transparent;
 }
-
-@media only screen and (max-width: 575px){
-    .tutorials-content .row .col-sm{
-        margin: 0 auto;
-    }
+.training-main-container .modal-content{
 }
-
-@media only screen and (min-width: 1440px){
-
-}
-
-
-.tutorials-container .modal-dialog{
-    background-color: red;
-}
-.tutorials-container .modal-content{
-    background-color: yellow;
-}
-.tutorials-container .modal-header{
+.training-main-container .modal-header{
     background-color: #333;
 }
-.tutorials-container .modal-body{
+.training-main-container .modal-header h2{
+    max-width: 280px;
+    font-size: 1.125rem;
+    color: #fff;
+}
+.training-main-container .modal-header button{
+    outline: none;
     background-color: #fff;
+    border: none;
+    padding: 0;
+    margin-right: .25rem !important;
 }
-
-.tutorials-container .player__embed{
-    background-color: #dedede;
+.training-main-container .modal-header .close{
+    outline: none;
+    background-color: #fff;
+    border: none;
+    padding: .25rem .5rem;
+    border-radius: .25rem;
 }
-.tutorials-container .embed-responsive-item{
-    
-}
-
-.tutorials-container .fa-user,
-.tutorials-container .fa-calendar-days,
-.tutorials-container .fa-clock{
-    padding: 4px;
-    border-radius: 4px;
-}
-
-.tutorials-container .fa-user{
-    color: #663399;
-    background-color: rgb(102, 51, 153, .3);
-    color: rgb(205, 32, 31);
-    background-color: rgb(205, 32, 31, .3);
-    color: #353535;
-    background-color: rgb(236, 160, 33, .2);
-}
-.tutorials-container .fa-calendar-days{
-    color: #eca021;
-    background-color: rgb(236, 160, 33, .3);
-    color: #0A66C2;
-    background-color: rgb(10, 102, 194, .3);
-    color: #353535;
-    background-color: rgb(236, 160, 33, .2);
-}
-.tutorials-container .fa-clock{
-    color: #353535;
-    background-color: rgb(236, 160, 33, .2);
+.training-main-container .modal-body{
+    background-color: #fff;
 }
