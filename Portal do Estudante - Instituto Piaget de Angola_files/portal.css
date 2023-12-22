@@ -296,7 +296,8 @@
             font-size: 20px;
         }
 
-        .top-description li i {
+        .top-description li i,
+        .profile-icon--3 {
             padding: 4px;
             border-radius: 4px;
             color: #f0bf5f;
@@ -313,17 +314,20 @@
     }
 
     .bottom-description .fa-graduation-cap,
-    .bottom-description .fa-address-card {
+    .bottom-description .fa-address-card,
+    .profile-icon {
         padding: 4px;
         border-radius: 4px;
     }
 
-    .bottom-description .fa-graduation-cap {
+    .bottom-description .fa-graduation-cap,
+    .profile-icon--1 {
         color: #fe6347;
         background-color: rgb(254,99,71, 0.2);
     }
 
-    .bottom-description .fa-address-card {
+    .bottom-description .fa-address-card,
+    .profile-icon--2 {
         color: #663399;
         background-color: rgb(102, 51, 153, 0.2);
     }
@@ -1042,3 +1046,151 @@
 .training-main-container .modal-body{
     background-color: #fff;
 }
+
+
+/* ================================= PROFILE ================================= */
+
+.col-sm-profile:first-child{
+    /*
+    background-color: green;*/
+}
+.col-sm-profile:last-child{
+    /*
+    background-color: yellow;*/
+}
+.back-to-portal-container{
+    width: 100%;
+    height: 32px;
+    background-color: #eee;
+}
+
+
+.back-to-portal{
+    margin: 0 auto;
+    max-width: 1352px !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+    color: #555;
+    /*
+    background-color: red;*/
+}
+
+.col-sm-profile-1{
+    padding: 0 !important;
+}
+.row-profile{
+    margin: 0 auto !important;
+    max-width: 1900px !important;
+    max-width: 1352px !important;
+}
+
+.portal-card{
+    padding: 1rem 0 1rem 1rem;
+    /*
+    background-color: #1877F2;*/
+}
+
+
+
+.portal-card-header{
+    width: 100%;
+    height: 120px;
+    padding: 1rem;
+    color: #f3f4f5;
+    background-color: #333333;
+    background-image: linear-gradient(0deg, #353535, #555555);
+    position: relative;
+    border-radius: 8px 8px 0 0;
+}
+.portalcard-image-container{
+    width: 92px;
+    height: 92px;
+    border-radius: 100%;
+    border: 3px solid #fff;
+    position: absolute;
+    left: 1rem;
+    bottom: -46px;
+}
+.portalcard-image-container img{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+
+
+
+
+.portal-card-body{
+    padding: 46px 1rem 1rem .5rem;
+    background-color: #fff;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 1px 1px 4px rgba(0,0,0, .2) !important;
+}
+.portal-card-body h1{
+    font-size: 18px;
+}
+.portal-card-body h6{
+    color: #555 !important;
+    font-size: 12px !important;
+    font-family: sans-serif !important;
+}
+.portal-card-body h6 span{
+    font-style: italic;
+}
+
+.profile-card-description li span{
+    color: #494949;
+    font-size: 12px !important;
+    font-family: sans-serif !important;
+}
+
+
+
+
+
+.profile-icon--1,
+.profile-icon--2,
+.profile-icon--3 {
+    color: #555555;
+    color: #0A66C2;
+    color: #333;
+    background-color: rgb(85, 85, 85, 0.3);
+    background-color: rgb(236, 160, 33, 0.2);
+    background-color: rgb(85, 85, 85, 0.3);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.col-sm-profile-2{
+    padding: 1rem !important;
+    padding: 0;
+}
+.profile-main-container{
+    min-height: 480px;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 1px 1px 4px rgba(0,0,0, .2) !important;
+}
+
+.profile-menu-list .nav-link {
+    border: none !important;
+    background-color: #eee;
+}
+.profile-menu-list .nav-link.active {
+    background-color: #cea44b !important;
+}
+
